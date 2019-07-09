@@ -24,13 +24,16 @@ document.addEventListener("keyup", function(event) {
 });
 
 function reset() {
+  //reset then set overall scores
   currentScore = 0;
   overallP1Score = 0;
   overallP2Score = 0;
 
-  //   document.getElementById("tug-score").innerHTML = currentScore;
   document.getElementById("player-1-score").innerHTML = overallP1Score;
   document.getElementById("player-2-score").innerHTML = overallP2Score;
+
+  //update p1 & p2 current scores
+  updateScore();
 }
 
 function getPlayerKeys() {
@@ -72,7 +75,8 @@ function playerScore(player) {
 
 function updateScore() {
   //   document.getElementById("tug-score").innerHTML = currentScore;
-  document.getElementById("line").style.WebkitTransform = `translate(${currentScore}vw)`; }
+  document.getElementById("line").style.WebkitTransform = `translate(${currentScore}vw)`;
+}
 
 function playerWin(winner) {
   console.log(winner + " wins!");
@@ -83,7 +87,14 @@ function playerWin(winner) {
   }
   document.getElementById("player-1-score").innerHTML = overallP1Score;
   document.getElementById("player-2-score").innerHTML = overallP2Score;
-  newRound();
+
+  if (overallP1Score >= 3) {
+    alert("Player 1 Wins!");
+  } else if (overallP2Score >= 3) {
+    alert("Player 2 Wins!");
+  } else {
+    newRound();
+  }
 }
 
 function newRound() {
