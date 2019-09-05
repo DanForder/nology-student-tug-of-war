@@ -17,6 +17,7 @@ View the application live [here](http://tugofwar.dforder.com)
 
 ### Current State
 - Users can wrestle on the keyboard to move the rope closer to their side of the screen
+- Desktop-only (Requires a keyboard to play)
 - Responsive to small and large screens
 
 ### How to
